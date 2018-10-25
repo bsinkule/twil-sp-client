@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import { Link } from '@reach/router'
+
 import {Bar, Line, Pie} from 'react-chartjs-2'
 
 let dates = ['11-19-18', '12-3-18', '12-17-18', '12-31-18', '1-14-19', '1-28-19', '2-4-19', '2-18-19', '3-4-19', '3-18-19', '4-1-19', '4-15-19']

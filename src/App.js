@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import './App.css';
 
-import HoursChart from './components/HoursChart'
+import Main from './components/Main.js';
+import Login from './components/Login.js';
+import NotFound from './components/NotFound.js';
+import Callback from './components/Callback.js'
 
 const engApi = "http://localhost:5000/engineers/"
 const projApi = "http://localhost:5000/projects/"
@@ -38,14 +41,27 @@ class App extends Component {
   }
 
   render() {
-    console.log("Projects - ", this.state.projData)
-    console.log("Engineers - ", this.state.engData)
+    let mainComponent = "";
+    switch(this.props.location){
+        case "":
+            mainComponent = <Login {...this.props}/>;
+            break;
+        case "callback":
+            mainComponent = <Callback />;
+            break;
+        case "main":
+            mainComponent = this.props.auth.isAuthenticated() ? <Main {...this.props} /> : <NotFound />
+            break;
+        default:
+            mainComponent = <Main {...this.props} />;
+
+    }
 
     return (
-      <div className="App">
-        <HoursChart projData={this.state.projData} engData={this.state.engData}/>
-      </div>
-    )
+        <div className="App">
+            {mainComponent}
+        </div>
+        )
   }
 }
 
