@@ -121,28 +121,31 @@ class HoursChart extends Component {
                     data={{
                         labels: ['11-19-18', '12-3-18', '12-17-18', '12-31-18', '1-14-19', '1-28-19', '2-4-19', '2-18-19', '3-4-19', '3-18-19', '4-1-19', '4-15-19'],
                         datasets: [{
-                          label: 'Project Front-End',
+                          label: 'Project FE',
                           type: 'line',
-                          fill: false,
+                          fill: true,
                           data: feData,
-                          borderColor: 'darkblue'
+                          borderColor: 'darkblue',
+                          backgroundColor: 'rgba(0, 0, 255, 0.3'
                         }, {
-                          label: 'Project Back-End',
+                          label: 'Project BE',
                           type: 'line',
                           fill: false,
                           data: beData,
                           borderColor: 'blue'
                         },{
-                          label: 'Company FE',
+                          label: 'Dev FE',
                           data: feEng,
                           backgroundColor: 'darkgreen'
                         },{
-                          label: 'Company BE',
+                          label: 'Dev BE',
                           data: beEng,
                           backgroundColor: 'lightgreen'
                         }]
                     }}
+                    height={300}
                     options={{
+                        maintainAspectRatio: false,
                         title: {
                             display: true,
                             text: 'Labor Hours vs. Project Hours',
@@ -152,12 +155,13 @@ class HoursChart extends Component {
                             display: true,
                             position: 'bottom',
                             labels: {
-                                fontColor: '#000'
+                                fontColor: '#000',
+                                boxWidth: 15
                             }
                         },
                         layout: {
                             padding: {
-                                left: 50,
+                                left: 15,
                                 right: 0,
                                 bottom: 0,
                                 top: 0

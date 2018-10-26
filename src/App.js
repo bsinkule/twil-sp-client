@@ -6,38 +6,8 @@ import Login from './components/Login.js';
 import NotFound from './components/NotFound.js';
 import Callback from './components/Callback.js'
 
-const engApi = "http://localhost:5000/engineers/"
-const projApi = "http://localhost:5000/projects/"
-
 class App extends Component {
   state = {
-    projData: [],
-    engData: []
-  }
-
-  componentDidMount() {
-    this.projApiData()
-    this.engApiData()
-  }
-
-  projApiData = () => {
-    fetch(projApi)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          projData: data.data,
-        })
-      })
-  }
-
-  engApiData = () => {
-    fetch(engApi)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          engData: data.data,
-        })
-      })
   }
 
   render() {
@@ -54,9 +24,8 @@ class App extends Component {
             break;
         default:
             mainComponent = <Main {...this.props} />;
-
     }
-
+    
     return (
         <div className="App">
             {mainComponent}

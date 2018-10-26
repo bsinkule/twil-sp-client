@@ -10,6 +10,7 @@ class Auth {
             domain: "bsinkule.auth0.com",
             clientID: "eAMvu6hJ-BRwVPDVUiJytAZkgvDqNyHs",
             redirectUri: "http://localhost:3000/callback",
+            // redirectUri: "http://test-smart-project.surge.sh/callback",
             audience: "https://bsinkule.auth0.com/userinfo",
             responseType: "token id_token",
             scope: "openid"

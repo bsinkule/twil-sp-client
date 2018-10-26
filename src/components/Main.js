@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import '../App.css';
 import { Router, Link } from '@reach/router'
-import Test from './Test'
-
+import Nav from './Nav'
+// import Header from './Header'
+import Side from './Side'
+import RightSide from './RightSide'
 import HoursChart from './HoursChart'
 
 const engApi = "http://localhost:5000/engineers/"
@@ -11,7 +13,8 @@ const projApi = "http://localhost:5000/projects/"
 class Main extends Component {
   state = {
     projData: [],
-    engData: []
+    engData: [],
+    side: false
   }
 
   componentDidMount() {
@@ -24,7 +27,9 @@ class Main extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState({
-          projData: data.data,
+          projData: data.data.filter(auth => {
+              return auth.auth_id === localStorage.getItem('User_id')
+          })
         })
       })
   }
@@ -34,8 +39,17 @@ class Main extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState({
-          engData: data.data,
+          engData: data.data.filter(auth => {
+            return auth.auth_id === localStorage.getItem('User_id')
         })
+      })
+    })
+  }
+
+  toggle = () => {
+      const tog = !this.state.side
+      this.setState({
+          side: tog
       })
   }
 
@@ -44,14 +58,16 @@ class Main extends Component {
     console.log("Engineers - ", this.state.engData)
 
     return (
-      <div>
-        <div onClick={this.props.auth.logout}>Log out</div>
-        <Link to='main/chart'><p>CHART</p></Link>
-        <Link to='main/test'><p>TEST</p></Link>
-        <Router>
-            <HoursChart path='main' projData={this.state.projData} engData={this.state.engData}/>
-            <Test path='main/test' />
-        </Router>
+      <div className="Ap">
+        <Nav auth={this.props.auth}/>
+        <div className="main">
+            {this.state.side ? <Side projApiData={this.projApiData} engApiData={this.engApiData}/> : null}
+            <div className="tab" onClick={this.toggle}>{this.state.side ? <p>hide</p> : <p>add info</p>}</div>
+            <Router>
+                <HoursChart path='main' projData={this.state.projData} engData={this.state.engData}/>
+            </Router>
+            {this.state.side ? null : <RightSide toggle={this.toggle}/>}
+        </div>
       </div>
     )
   }
