@@ -85,7 +85,7 @@ body {
 /* RightSide */
 .listing2 {
   padding: 0;
-  margin: 0;
+  margin: auto;
   list-style: none;
 }
 
@@ -104,7 +104,7 @@ body {
 .siteInfo {
   width: 22vw;
   margin-right: 20px;
-  margin: auto;
+  max-height: 420px;
   padding: 5px;
   border-radius: 5px;
   background-color: rgb(188, 189, 165);

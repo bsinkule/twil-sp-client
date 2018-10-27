@@ -11,6 +11,56 @@ class HoursChart extends Component {
 
 
     render(){
+        let projRevenue = (obj) => {
+            let startData = [0,0,0,0,0,0,0,0,0,0,0,0]
+            obj.map(bob => {
+                let first = dates.indexOf(bob.startDate)
+                let last = dates.indexOf(bob.endDate)+1
+                let indexes = dates.slice(first, last)
+                let hours = +(bob.revenue / indexes.length).toFixed(2)
+                let cutDates = startData.splice(first, last - first)
+                
+                let addHours = (projHours) =>{
+                    let arr = []
+                    for (let i in projHours){
+                        arr.push(projHours[i] + hours)
+                        }
+                    return arr
+                }
+                let adj = addHours(cutDates)
+        
+                return startData.splice(first, 0, ...adj)
+            })
+            return startData
+        }
+        const revenue= projRevenue(this.props.projData)
+        console.log("revenue ", revenue)
+
+        let totalCost = (obj) => {
+            let startData = [0,0,0,0,0,0,0,0,0,0,0,0]
+            obj.map(bob => {
+                let first = dates.indexOf(bob.startDate)
+                let last = dates.indexOf(bob.endDate)+1
+                // let indexes = dates.slice(first, last)
+                let wages = bob.hourlyWage * bob.hoursPerWeek * 2
+                let cutDates = startData.splice(first, last - first)
+                
+                let addHours = (projHours) =>{
+                    let arr = []
+                    for (let i in projHours){
+                        arr.push(projHours[i] + wages)
+                        }
+                    return arr
+                }
+                let adj = addHours(cutDates)
+        
+                return startData.splice(first, 0, ...adj)
+            })
+            return startData
+        }      
+        let cost = totalCost(this.props.engData)
+        console.log("cost ", cost)
+
         let beProject = (obj) => {
             let startData = [0,0,0,0,0,0,0,0,0,0,0,0]
             obj.map(bob => {
@@ -144,7 +194,7 @@ class HoursChart extends Component {
                           backgroundColor: 'lightgreen'
                         }]
                     }}
-                    height={300}
+                    height={200}
                     options={{
                         maintainAspectRatio: false,
                         title: {
@@ -176,6 +226,59 @@ class HoursChart extends Component {
                                 scaleLabel: {
                                   display: true,
                                   labelString: 'Hours'
+                                }
+                              }]
+                        }
+                    }}
+                /> 
+                <Bar 
+                    data={{
+                        labels: ['11-19-18', '12-3-18', '12-17-18', '12-31-18', '1-14-19', '1-28-19', '2-4-19', '2-18-19', '3-4-19', '3-18-19', '4-1-19', '4-15-19'],
+                        datasets: [{
+                          label: 'Project Revenue',
+                          type: 'line',
+                          fill: true,
+                          data: revenue,
+                          borderColor: 'rgb(0, 0, 255)',
+                          backgroundColor: 'rgba(0, 0, 255, 0.2)'
+                        }, {
+                          label: 'Developer Cost',
+                          data: cost,
+                          backgroundColor: 'red'
+                        }]
+                    }}
+                    height={200}
+                    options={{
+                        maintainAspectRatio: false,
+                        title: {
+                            display: true,
+                            text: 'Labor Cost vs. Project Revenue',
+                            fontSize: 25
+                        },
+                        legend:{
+                            display: true,
+                            position: 'bottom',
+                            labels: {
+                                fontColor: '#000',
+                                boxWidth: 15
+                            }
+                        },
+                        layout: {
+                            padding: {
+                                left: 15,
+                                right: 0,
+                                bottom: 0,
+                                top: 0
+                            }
+                        },
+                        tooltips: {
+                            enabled: true
+                        },
+                        scales: {
+                            yAxes: [{
+                                scaleLabel: {
+                                  display: true,
+                                  labelString: 'Dollars'
                                 }
                               }]
                         }

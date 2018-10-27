@@ -30,8 +30,6 @@ class Login extends React.Component {
                             <div className="col-sm-6 mx-auto">
                                 <nav>
                                     <ul>
-                                        <li>About</li>
-                                        <li>Contact Us</li>
                                         <li onClick={this.props.auth.logout}>Log out</li>
                                     </ul>
                                 </nav>

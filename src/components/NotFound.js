@@ -1,13 +1,13 @@
 import React, {Component} from 'react'
-// import { Link } from '@reach/router'
 
 class NotFound extends Component {
     render(){
         return(
             <div>
-                Please Login to See Profile
+                Your session timed-out. Please log back in. Thanks.
                 <hr/>
-                <a href="/">Go Back</a>
+                <a href="/">Go Back Login</a>
+                <button className="loginButton bg-teal" onClick={this.props.auth.login}>Login</button> 
             </div>
         )
     }
