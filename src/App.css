@@ -84,17 +84,13 @@ body {
 
 /* RightSide */
 .listing2 {
-  padding-left: 0;
+  padding: 0;
+  margin: 0;
   list-style: none;
-  margin: .5em;
-  display: grid;
-  grid-gap: .25em;
-  grid-auto-flow: dense;
-  grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
 }
 
 .listing2 li {
-  background-color: #5B7B5E;
+  background-color: rgb(88, 104, 89);
   color: white;
   box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
@@ -108,21 +104,18 @@ body {
 .siteInfo {
   width: 22vw;
   margin-right: 20px;
+  margin: auto;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgb(188, 189, 165);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
 }
 
 @media (max-width: 650px) {
   .siteInfo {
     display: none;
   }
-}
-
-.smallButton {
-  border-radius: 5px;
-  background-color: #A5A775;
-}
-
-.smallButton:hover {
-  cursor: pointer;
 }
 /* RightSide END*/
 
@@ -146,11 +139,11 @@ body {
   cursor: pointer;
   transition: 0.3s;
   width: 100%;
+  height: 15px;
 }
 
 .side {
   background-color: #A5A775;
-  margin: auto;
   font-size: 14px;
 }
 
@@ -174,12 +167,9 @@ body {
 
 /* LEFT SIDE end */
 
-/* SIDE TAB */
+/* SIDE TAB start*/
 .tab {
   background-color: #A5A775;
-  /* border-top: 1px black solid;
-  border-right: 1px black solid;
-  border-bottom: 1px black solid; */
   height: 40px;
   margin-top: 150px;
   border-radius: 0 47% 47% 0;
@@ -191,10 +181,63 @@ body {
 
 .tab p {
   margin: 0;
-  padding: 0px 3px;
-}
-
-.tab:hover {
+  padding: 0px 7px;
   cursor: pointer;
 }
-/* SIDE TAB */
+/* SIDE TAB end*/
+
+/* ALLENGINEERS ENGINEERLI UPDATEENGINEER start*/
+
+.listing {
+  padding-left: 0;
+  list-style: none;
+  margin: 1em;
+  display: grid;
+  grid-gap: 1em;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
+}
+
+.listing li {
+  background-color: #d3d3d2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.cta {
+  width: 100%;
+  margin-top: auto;
+  border-top: 1px solid #a5a4a2fb;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.resp {
+    width: 100%;
+}
+
+.addRemoveButton2 {
+  border: 1px black solid;
+  background-color: #dacccc;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-size: .5em;
+  cursor: pointer;
+  width: 35%;
+}
+
+.body {
+  padding: 10px;
+}
+
+.body div {
+  padding: 2px;
+}
+/* ALLENGINEERS ENGINEERLI UPDATEENGINEER end*/

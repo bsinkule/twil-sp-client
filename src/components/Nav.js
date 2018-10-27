@@ -12,6 +12,7 @@ const Nav = (props) => {
             <div className="nav-links">
                 <Link to='developers'><p className="line">developers</p></Link>
                 <Link to='projects'><p className="line">projects</p></Link>
+                <Link to='main'><p className="line">home</p></Link>
                 <p className="line" onClick={props.auth.logout}>logout</p>
             </div>
         </div>

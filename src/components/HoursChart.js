@@ -125,14 +125,15 @@ class HoursChart extends Component {
                           type: 'line',
                           fill: true,
                           data: feData,
-                          borderColor: 'darkblue',
-                          backgroundColor: 'rgba(0, 0, 255, 0.3'
+                          borderColor: 'rgb(0, 0, 255)',
+                          backgroundColor: 'rgba(0, 0, 255, 0.2)'
                         }, {
                           label: 'Project BE',
                           type: 'line',
-                          fill: false,
+                          fill: true,
                           data: beData,
-                          borderColor: 'blue'
+                          borderColor: 'rgb(153, 0, 255)',
+                          backgroundColor: 'rgba(153, 0, 255, 0.2)'
                         },{
                           label: 'Dev FE',
                           data: feEng,
