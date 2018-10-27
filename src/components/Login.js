@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Link } from '@reach/router'
 
 class Login extends React.Component {
     constructor(props) {

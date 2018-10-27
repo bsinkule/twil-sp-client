@@ -8,8 +8,10 @@ import HoursChart from './HoursChart'
 import AllEngineers from './AllEngineers'
 import AllProjects from './AllProjects'
 
-const engApi = "http://localhost:5000/engineers/"
-const projApi = "http://localhost:5000/projects/"
+// const engApi = "http://localhost:5000/engineers/"
+// const projApi = "http://localhost:5000/projects/"
+const engApi = "https://express-smart-projects.herokuapp.com/engineers/"
+const projApi = "https://express-smart-projects.herokuapp.com/projects/"
 
 class Main extends Component {
   state = {

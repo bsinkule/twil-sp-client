@@ -1,6 +1,7 @@
 import React from 'react'
 
-const projApi = "http://localhost:5000/projects/"
+// const projApi = "http://localhost:5000/projects/"
+const projApi = "https://express-smart-projects.herokuapp.com/projects/"
 
 class UpdateProject extends React.Component {
     constructor(props) {
