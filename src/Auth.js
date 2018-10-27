@@ -9,8 +9,8 @@ class Auth {
         this.auth0 = new auth0.WebAuth({
             domain: "bsinkule.auth0.com",
             clientID: "eAMvu6hJ-BRwVPDVUiJytAZkgvDqNyHs",
-            redirectUri: "http://localhost:3000/callback",
-            // redirectUri: "http://test-smart-project.surge.sh/callback",
+            redirectUri: "http://smart-projects.surge.sh/callback",
+            // redirectUri: "http://localhost:3000/callback",
             audience: "https://bsinkule.auth0.com/userinfo",
             responseType: "token id_token",
             scope: "openid"
