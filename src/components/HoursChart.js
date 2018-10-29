@@ -175,32 +175,32 @@ class HoursChart extends Component {
                           type: 'line',
                           fill: true,
                           data: feData,
-                          borderColor: 'rgb(0, 0, 255)',
-                          backgroundColor: 'rgba(0, 0, 255, 0.2)'
+                          borderColor: 'rgb(50, 207, 231)',
+                          backgroundColor: 'rgba(50, 207, 231, 0.3)'
                         }, {
                           label: 'Project BE',
                           type: 'line',
                           fill: true,
                           data: beData,
-                          borderColor: 'rgb(153, 0, 255)',
-                          backgroundColor: 'rgba(153, 0, 255, 0.2)'
+                          borderColor: 'rgb(9, 182, 101)',
+                          backgroundColor: 'rgba(9, 182, 101, 0.2)'
                         },{
                           label: 'Dev FE',
                           data: feEng,
-                          backgroundColor: 'darkgreen'
+                          backgroundColor: 'rgb(42, 34, 201)'
                         },{
                           label: 'Dev BE',
                           data: beEng,
-                          backgroundColor: 'lightgreen'
+                          backgroundColor: 'rgb(115, 115, 115)',
                         }]
                     }}
-                    height={200}
+                    height={250}
                     options={{
                         maintainAspectRatio: false,
                         title: {
                             display: true,
-                            text: 'Labor Hours vs. Project Hours',
-                            fontSize: 25
+                            text: 'Developer Hours vs. Project Hours',
+                            fontSize: 20
                         },
                         legend:{
                             display: true,
@@ -212,7 +212,7 @@ class HoursChart extends Component {
                         },
                         layout: {
                             padding: {
-                                left: 15,
+                                left: 0,
                                 right: 0,
                                 bottom: 0,
                                 top: 0
@@ -226,7 +226,7 @@ class HoursChart extends Component {
                                 scaleLabel: {
                                   display: true,
                                   labelString: 'Hours'
-                                }
+                                }        
                               }]
                         }
                     }}
@@ -239,12 +239,12 @@ class HoursChart extends Component {
                           type: 'line',
                           fill: true,
                           data: revenue,
-                          borderColor: 'rgb(0, 0, 255)',
-                          backgroundColor: 'rgba(0, 0, 255, 0.2)'
+                          borderColor: 'rgb(9, 182, 101)',
+                          backgroundColor: 'rgba(9, 182, 101, 0.2)'
                         }, {
                           label: 'Developer Cost',
                           data: cost,
-                          backgroundColor: 'red'
+                          backgroundColor: 'rgb(209, 36, 36)'
                         }]
                     }}
                     height={200}
@@ -252,8 +252,8 @@ class HoursChart extends Component {
                         maintainAspectRatio: false,
                         title: {
                             display: true,
-                            text: 'Labor Cost vs. Project Revenue',
-                            fontSize: 25
+                            text: 'Developer Cost vs. Project Revenue',
+                            fontSize: 20
                         },
                         legend:{
                             display: true,
@@ -265,7 +265,7 @@ class HoursChart extends Component {
                         },
                         layout: {
                             padding: {
-                                left: 15,
+                                left: 0,
                                 right: 0,
                                 bottom: 0,
                                 top: 0

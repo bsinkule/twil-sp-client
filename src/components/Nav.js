@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from "@reach/router"
+import logo from '../images/logo-smart-projects.png'
 
 const Nav = (props) => {
   
     return (
         <div className="nav">
             <div className="nav-head">
-                <div className="nav-title">smart projects</div>
+            <Link to='main'><img className="logo" src={logo} alt="logo"/></Link>
             </div>
             <input type="checkbox" id="nav-check"/>
             <div className="nav-links">

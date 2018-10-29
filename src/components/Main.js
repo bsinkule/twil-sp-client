@@ -7,6 +7,7 @@ import RightSide from './RightSide'
 import HoursChart from './HoursChart'
 import AllEngineers from './AllEngineers'
 import AllProjects from './AllProjects'
+import Header from './Header'
 
 // const engApi = "http://localhost:5000/engineers/"
 // const projApi = "http://localhost:5000/projects/"
@@ -115,10 +116,11 @@ class Main extends Component {
 
     return (
       <div className="Ap">
+        <Header />
         <Nav auth={this.props.auth}/>
         <div className="main">
-            {this.state.side ? <Side projApiData={this.projApiData} engApiData={this.engApiData}/> : null}
-            <div className="tab" onClick={this.toggle}>{this.state.side ? <p>hide</p> : <p>add info</p>}</div>
+            {this.state.side ? <Side side={this.state.side} projApiData={this.projApiData} engApiData={this.engApiData}/> : null}
+            <div className="tab" onClick={this.toggle}>{this.state.side ? <p>hide</p> : <p>add<br/>info</p>}</div>
             <Router>
                 <HoursChart path='main' projData={this.state.projData} engData={this.state.engData}/>
                 <AllEngineers path='developers' deleteEngineer={this.deleteEngineer} engApiData={this.engApiData} engData={this.state.engData}/>

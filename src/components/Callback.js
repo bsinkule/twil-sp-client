@@ -9,10 +9,11 @@ class Callback extends Component {
     }
     render(){
         return(
-            <div>
-                Loading...
-                <br/>
-                <a href="/">Login Page</a>
+            <div className="hero-image">
+                <div className="hero-text">
+                    <h1>LOADING...</h1>
+                    <a href="/"><button className="loginButton">Back to Login Page</button></a>
+                </div>
             </div>
         )
     }
