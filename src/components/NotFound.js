@@ -5,7 +5,7 @@ class NotFound extends Component {
         return(
         <div className="hero-image">
             <div className="hero-text-3">
-                <div>Your session timed-out. Please log back in. Thanks.</div><br/><br/>
+                <div>Your session timed-out. Please log back in. Thanks.</div><br/>
                 <button className="loginButton" onClick={this.props.auth.login}>Click To Log Back In</button>
             </div>
         </div>

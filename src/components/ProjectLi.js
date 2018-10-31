@@ -19,7 +19,7 @@ class ProjectLi extends React.Component {
     render() {
         return (
             <li>
-                <img className="resp" src={this.props.logoClient} alt="CLient Logo"/>
+                <img className="resp" src={this.props.logoClient} alt="Client Logo"/>
                 <h3>{this.props.projectName}</h3>
                 <div className="body">
                     <div><b>Client:</b> {this.props.client}</div>

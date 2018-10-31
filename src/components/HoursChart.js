@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import { Link } from '@reach/router'
 
 import {Bar, Line, Pie} from 'react-chartjs-2'
 

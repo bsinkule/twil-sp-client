@@ -13,7 +13,7 @@ body {
 .nav {
   width: 100%;
   background-color: rgb(76, 172, 126);
-  background-image: linear-gradient(to left, rgb(76, 172, 126) , rgb(164, 196, 181))
+  background-image: linear-gradient(to left, rgb(76, 184, 132) , rgb(164, 196, 181))
 }
 
 .nav > .nav-head {

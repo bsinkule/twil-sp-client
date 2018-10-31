@@ -1,7 +1,7 @@
 import React from 'react'
 
-// const projApi = "http://localhost:5000/projects/"
-const projApi = "https://express-smart-projects.herokuapp.com/projects/"
+const projApi = "http://localhost:5000/projects/"
+// const projApi = "https://express-smart-projects.herokuapp.com/projects/"
 
 class UpdateProject extends React.Component {
     constructor(props) {
@@ -66,17 +66,17 @@ class UpdateProject extends React.Component {
                         </div>
                         <div className="divSideForm">
                             <label>Project Revenue:<br />
-                                <input placeholder="ex. 8000" className="inputAdd" type="number" step="0.01" name="revenue" value={this.state.revenue} onChange={this.handleChange} required/>
+                                <input placeholder="ex. 8000" className="inputAdd" type="number" min="0" step="1" name="revenue" value={this.state.revenue} onChange={this.handleChange} required/>
                             </label>
                         </div>
                         <div className="divSideForm">
                             <label>Estimated Frontend Hours:<br />
-                                <input placeholder="ex. 250" className="inputAdd" type="number" step="0.01" name="frontendHours" value={this.state.frontendHours} onChange={this.handleChange} required/>
+                                <input placeholder="ex. 250" className="inputAdd" type="number" min="0" step="1" name="frontendHours" value={this.state.frontendHours} onChange={this.handleChange} required/>
                             </label>
                         </div>
                         <div className="divSideForm"> 
                             <label>Estimated Backend Hours:<br />
-                                <input placeholder="ex. 285" className="inputAdd" type="number" step="0.01" name="backendHours" value={this.state.backendHours} onChange={this.handleChange} required/>
+                                <input placeholder="ex. 285" className="inputAdd" type="number" min="0" step="1" name="backendHours" value={this.state.backendHours} onChange={this.handleChange} required/>
                             </label>
                         </div>
                         <div className="divSideForm">
