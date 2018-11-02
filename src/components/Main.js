@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../App.css';
-import { Router, Link } from '@reach/router'
+import { Router } from '@reach/router'
 import Nav from './Nav'
 import Side from './Side'
 import RightSide from './RightSide'
@@ -9,10 +9,10 @@ import AllEngineers from './AllEngineers'
 import AllProjects from './AllProjects'
 import Header from './Header'
 
-const engApi = "http://localhost:5000/engineers/"
-const projApi = "http://localhost:5000/projects/"
-// const engApi = "https://express-smart-projects.herokuapp.com/engineers/"
-// const projApi = "https://express-smart-projects.herokuapp.com/projects/"
+// const engApi = "http://localhost:5000/engineers/"
+// const projApi = "http://localhost:5000/projects/"
+const engApi = "https://go-smart-projects.herokuapp.com/engineers/"
+const projApi = "https://go-smart-projects.herokuapp.com/projects/"
 
 class Main extends Component {
   state = {
@@ -125,8 +125,8 @@ class Main extends Component {
             <div className="tab" onClick={this.toggle}>{this.state.side ? <p>hide</p> : <p>add<br/>info</p>}</div>
             <Router>
                 <HoursChart path='main' projData={this.state.projData} engData={this.state.engData}/>
-                <AllEngineers path='developers' deleteEngineer={this.deleteEngineer} engApiData={this.engApiData} engData={this.state.engData}/>
                 <AllProjects path='projects' deleteProject={this.deleteProject} projApiData={this.projApiData} projData={this.state.projData}/>
+                <AllEngineers path='developers' deleteEngineer={this.deleteEngineer} engApiData={this.engApiData} engData={this.state.engData}/>
             </Router>
             {this.state.side ? null : <RightSide />}
         </div>

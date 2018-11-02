@@ -1,7 +1,7 @@
 import React from 'react'
 
-const projApi = "http://localhost:5000/projects/"
-// const projApi = "https://express-smart-projects.herokuapp.com/projects/"
+// const projApi = "http://localhost:5000/projects/"
+const projApi = "https://go-smart-projects.herokuapp.com/projects/"
 
 class UpdateProject extends React.Component {
     constructor(props) {
@@ -20,7 +20,13 @@ class UpdateProject extends React.Component {
 
     putData = (e) => {
         e.preventDefault()
-        const body = JSON.stringify(this.state)
+        
+        let postBody = this.state;
+        postBody.revenue = parseInt(this.state.revenue)
+        postBody.frontendHours = parseInt(this.state.frontendHours)
+        postBody.backendHours = parseInt(this.state.backendHours)
+        const body = JSON.stringify(postBody)
+
         const options = {
             method: 'PUT',
             body: body,

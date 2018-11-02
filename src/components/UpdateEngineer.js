@@ -1,7 +1,7 @@
 import React from 'react'
 
-const engApi = "http://localhost:5000/engineers/"
-// const engApi = "https://express-smart-projects.herokuapp.com/engineers/"
+// const engApi = "http://localhost:5000/engineers/"
+const engApi = "https://go-smart-projects.herokuapp.com/engineers/"
 
 class UpdateEngineer extends React.Component {
     constructor(props) {
@@ -20,7 +20,12 @@ class UpdateEngineer extends React.Component {
 
     putData = (e) => {
         e.preventDefault()
-        const body = JSON.stringify(this.state)
+        
+        let postBody = this.state;
+        postBody.hourlyWage = parseInt(this.state.hourlyWage)
+        postBody.hoursPerWeek = parseInt(this.state.hoursPerWeek)
+        const body = JSON.stringify(postBody)
+
         const options = {
             method: 'PUT',
             body: body,
@@ -81,7 +86,7 @@ class UpdateEngineer extends React.Component {
                         </div>
                         <div className="divSideForm"> 
                             <label>Hourly Wage:<br />
-                                <input placeholder="ex. 35.50" className="inputAdd" type="number" min="0" step="1" name="hourlyWage" value={this.state.hourlyWage} onChange={this.handleChange} required/>
+                                <input placeholder="ex. 35" className="inputAdd" type="number" min="0" step="1" name="hourlyWage" value={this.state.hourlyWage} onChange={this.handleChange} required/>
                             </label>
                         </div>
                         <div className="divSideForm">

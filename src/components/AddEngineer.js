@@ -1,7 +1,7 @@
 import React from 'react'
 
-const engApi = "http://localhost:5000/engineers/"
-// const engApi = "https://express-smart-projects.herokuapp.com/engineers/"
+// const engApi = "http://localhost:5000/engineers/"
+const engApi = "https://go-smart-projects.herokuapp.com/engineers/"
 
 class AddEngineer extends React.Component {
     constructor(props) {
@@ -21,12 +21,17 @@ class AddEngineer extends React.Component {
 
     postData = (e) => {
         e.preventDefault()
-        const body = JSON.stringify(this.state)
+
+        let postBody = this.state;
+        postBody.hourlyWage = parseInt(this.state.hourlyWage)
+        postBody.hoursPerWeek = parseInt(this.state.hoursPerWeek)
+        const body = JSON.stringify(postBody)
+        
         const options = {
             method: 'POST',
             body: body,
             headers: new Headers({
-                'content-type': 'application/json'
+                'Content-Type': 'application/json'
             })
         }
 

@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Auth from "../Auth";
+import logo from '../images/long-logo-smart-projects.png'
 
 class Callback extends Component {
     componentDidMount(){
@@ -11,6 +12,7 @@ class Callback extends Component {
         return(
             <div className="hero-image">
                 <div className="hero-text">
+                <img className="headerLogo" src={logo} alt="Smart Projects Logo"/>
                     <h1>LOADING...</h1>
                     <a href="/"><button className="loginButton">Back to Login Page</button></a>
                 </div>

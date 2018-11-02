@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-
+import { bellCurve } from './Functions'
 import {Bar, Line, Pie} from 'react-chartjs-2'
 
 let dates = ['11-19-18', '12-3-18', '12-17-18', '12-31-18', '1-14-19', '1-28-19', '2-4-19', '2-18-19', '3-4-19', '3-18-19', '4-1-19', '4-15-19']
@@ -33,14 +33,12 @@ class HoursChart extends Component {
             return startData
         }
         const revenue= projRevenue(this.props.projData)
-        console.log("revenue ", revenue)
 
         let totalCost = (obj) => {
             let startData = [0,0,0,0,0,0,0,0,0,0,0,0]
             obj.map(bob => {
                 let first = dates.indexOf(bob.startDate)
                 let last = dates.indexOf(bob.endDate)+1
-                // let indexes = dates.slice(first, last)
                 let wages = bob.hourlyWage * bob.hoursPerWeek * 2
                 let cutDates = startData.splice(first, last - first)
                 
@@ -58,7 +56,6 @@ class HoursChart extends Component {
             return startData
         }      
         let cost = totalCost(this.props.engData)
-        console.log("cost ", cost)
 
         let beProject = (obj) => {
             let startData = [0,0,0,0,0,0,0,0,0,0,0,0]
@@ -70,15 +67,16 @@ class HoursChart extends Component {
               let cutDates = startData.splice(first, last - first)
               
               let addHours = (projHours) =>{
-                let arr = []
-                for (let i in projHours){
-                  arr.push(projHours[i] + hours)
-                  }
-                return arr
-              }
-              let adj = addHours(cutDates)
-          
-              return startData.splice(first, 0, ...adj)
+                  let arr = []
+                  for (let i in projHours){
+                      arr.push(projHours[i] + hours)
+                    }
+                    return arr
+                }
+                let adj = addHours(cutDates)
+                let bell = bellCurve(adj)
+                
+              return startData.splice(first, 0, ...bell)
             })
           
             return startData
@@ -102,8 +100,9 @@ class HoursChart extends Component {
                 return arr
               }
               let adj = addHours(cutDates)
+              let bell = bellCurve(adj)
           
-              return startData.splice(first, 0, ...adj)
+              return startData.splice(first, 0, ...bell)
             })
           
             return startData
