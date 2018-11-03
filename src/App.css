@@ -6,14 +6,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(211, 218, 214);
+  background-color: rgb(229, 231, 230);
 }
 
 /* NAV START */
 .nav {
   width: 100%;
-  background-color: rgb(76, 172, 126);
-  background-image: linear-gradient(to bottom, rgb(90, 158, 125) , rgb(175, 209, 193))
+  background-color: rgb(49, 55, 65);
+  background-image: linear-gradient(to right, rgb(49, 55, 65) , rgb(85, 91, 97))
 }
 
 .nav > .nav-head {
@@ -39,18 +39,19 @@ body {
 }
 
 .line {
-  border-left: solid 1px rgb(105, 134, 120);
+  border-left: solid 1px rgb(169, 174, 185);
   display: inline-block;
   padding: 22px 5px 19px 5px;
   text-decoration: none;
-  color: black;
+  color: white;
   margin-top: 0px;
   margin-bottom: 0px;
 }
 
 .logo {
-  width: 50px;
-  padding: 7px 0px 7px 12px;
+  /* width: 50px; */
+  height: 38px;
+  padding: 10px 0px 7px 12px;
   cursor: pointer;
 }
 
@@ -73,13 +74,14 @@ body {
 
 /* MAIN START */
 .chart {
-  height: 75vh;
-  width: 75vw;
+  height: 70vh;
+  width: 70vw;
 }
 
 .main {
   display: flex;
   flex-direction: row;
+  width: 100vw;
 }
 /* MAIN END */
 
@@ -92,7 +94,13 @@ body {
 }
 
 .listing2 li {
-  background-color: rgb(164, 196, 181);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)), url("./images/png-light-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  /* background-color: rgb(107, 120, 134); */
   box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   font-size: 14px;
@@ -100,7 +108,12 @@ body {
   padding: 10px;
   max-width: 250px;
   line-height: 1.5;
-  border-radius: 10px;
+  border-radius: 5px;
+  color: white;
+  text-shadow: 1px 1px black;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .siteInfo {
@@ -109,7 +122,8 @@ body {
 }
 
 .rightLogo {
-  width: 100px;
+  width: 70px;
+  align-self: center;
 }
 
 @media (max-width: 670px) {
@@ -137,23 +151,35 @@ body {
   font-size: 10px;
   cursor: pointer;
   transition: 0.3s;
-  width: 100%;
-  height: 25px;
+  width: 70%;
+  min-height: 25px;
+  padding: 3px;
+  align-self: center;
 }
 
 .side {
-  background-color: rgb(175, 209, 193);
+  background-color: rgb(49, 55, 65);
   font-size: 14px;
   padding-bottom: 15px;
   border-radius: 0px 0px 10px 0px;
   width: 300px;
+  color: white;
+  text-shadow: 1px 1px black;
 }
 
 .sideForm {
   margin: 5px 15px;
   padding: 7px;
   border-radius: 5px;
-  background-color: rgb(81, 83, 94);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("./images/png-light-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  /* background-color: rgb(83, 117, 131); */
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   color: white;
 }
@@ -172,7 +198,7 @@ body {
 
 /* SIDE TAB start*/
 .tab {
-  background-color: rgb(175, 209, 193);
+  background-color: rgb(49, 55, 65);
   height: 40px;
   margin-top: 150px;
   border-radius: 0 47% 47% 0;
@@ -180,6 +206,7 @@ body {
   display: flex;
   align-items: center;
   box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.2);
+  color: white;
 }
 
 .tab p {
@@ -193,6 +220,7 @@ body {
 /* ALLENGINEERS ENGINEERLI UPDATEENGINEER start*/
 .listing {
   padding-left: 0;
+  width: 75vw;
   list-style: none;
   margin: 1em;
   display: grid;
@@ -202,13 +230,14 @@ body {
 }
 
 .listing li {
-  background-color: rgb(189, 192, 192);
+  background-color: rgb(205, 207, 207);
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  border: 1px solid rgb(175, 209, 193);
+  border: 1px solid rgb(176, 198, 218);
+  /* text-shadow: 1px 1px white; */
 }
 
 .listing li h3 {
@@ -250,6 +279,7 @@ body {
 
 .body div {
   padding: 2px;
+  text-shadow: .5px .5px white;
 }
 /* ALLENGINEERS ENGINEERLI UPDATEENGINEER end*/
 
@@ -260,7 +290,7 @@ body {
 }
 
 .hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("./images/light-bg-smart-projects.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("./images/png-light-bg.png");
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -269,8 +299,8 @@ body {
 }
 
 .hero-image-2 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("./images/light-bg-smart-projects.jpg");
-  height: 400px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("./images/png-light-bg.png");
+  height: 100px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

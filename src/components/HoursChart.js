@@ -173,23 +173,36 @@ class HoursChart extends Component {
                           type: 'line',
                           fill: true,
                           data: feData,
-                          borderColor: 'rgb(50, 207, 231)',
-                          backgroundColor: 'rgba(50, 207, 231, 0.3)'
+                          borderColor: 'rgb(0, 255, 255)',
+                          backgroundColor: 'rgba(0, 255, 255, 0.2)',
+                          pointBorderColor: 'black',
+                          pointBorderWidth: 2,
+                          borderWidth: 3
                         }, {
                           label: 'Project BE',
                           type: 'line',
                           fill: true,
                           data: beData,
-                          borderColor: 'rgb(9, 182, 101)',
-                          backgroundColor: 'rgba(9, 182, 101, 0.2)'
+                          borderColor: 'rgb(0, 255, 128)',
+                          backgroundColor: 'rgba(0, 255, 128, 0.2)',
+                        //   borderColor: 'rgb(255, 255, 0)',
+                        //   backgroundColor: 'rgba(255, 255, 0, 0.2)'
+                        pointBorderColor: 'black',
+                        pointBorderWidth: 2,
+                        borderWidth: 3
                         },{
                           label: 'Dev FE',
                           data: feEng,
-                          backgroundColor: 'rgb(42, 34, 201)'
+                          backgroundColor: 'rgb(26, 26, 255)',
+                          borderColor: 'black',
+                          borderWidth: 1
                         },{
                           label: 'Dev BE',
                           data: beEng,
-                          backgroundColor: 'rgb(115, 115, 115)',
+                          backgroundColor: 'rgb(0, 153, 77)',
+                        //   backgroundColor: 'rgb(204, 204, 0)',
+                        borderColor: 'black',
+                        borderWidth: 1
                         }]
                     }}
                     height={250}
@@ -237,12 +250,17 @@ class HoursChart extends Component {
                           type: 'line',
                           fill: true,
                           data: revenue,
-                          borderColor: 'rgb(9, 182, 101)',
-                          backgroundColor: 'rgba(9, 182, 101, 0.2)'
+                          borderColor: 'rgb(102, 255, 51)',
+                          backgroundColor: 'rgba(102, 255, 51, 0.2)',
+                          pointBorderColor: 'black',
+                          pointBorderWidth: 2,
+                          borderWidth: 3
                         }, {
                           label: 'Developer Cost',
                           data: cost,
-                          backgroundColor: 'rgb(209, 36, 36)'
+                          backgroundColor: 'rgb(255, 0, 0)',
+                          borderColor: 'black',
+                          borderWidth: 1
                         }]
                     }}
                     height={200}

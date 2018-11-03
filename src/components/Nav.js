@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from "@reach/router"
-import logo from '../images/logo-smart-projects.png'
+import logo from '../images/white-logo-sp.png'
 
 const Nav = (props) => {
   
