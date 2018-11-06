@@ -5,6 +5,7 @@ const AllProjects = (props) => {
 
     const projects = props.projData.map(pro => {
        return <ProjectLi    id={pro.id}
+                            mobileNumber={pro.mobileNumber}
                             projectName={pro.projectName}
                             client={pro.client}
                             logoClient={pro.logoClient}

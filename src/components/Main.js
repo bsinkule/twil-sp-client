@@ -11,8 +11,8 @@ import Header from './Header'
 
 // const engApi = "http://localhost:5000/engineers/"
 // const projApi = "http://localhost:5000/projects/"
-const engApi = "https://go-smart-projects.herokuapp.com/engineers/"
-const projApi = "https://go-smart-projects.herokuapp.com/projects/"
+const engApi = "https://express-smart-projects.herokuapp.com/engineers/"
+const projApi = "https://express-smart-projects.herokuapp.com/projects/"
 
 class Main extends Component {
   state = {
@@ -31,8 +31,8 @@ class Main extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState({
-          // projData: data.data.filter(auth => {
-          projData: data.filter(auth => {
+          projData: data.data.filter(auth => {
+          // projData: data.filter(auth => {
               return auth.auth_id === localStorage.getItem('User_id')
           })
         })
@@ -44,8 +44,8 @@ class Main extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState({
-          // engData: data.data.filter(auth => {
-          engData: data.filter(auth => {
+          engData: data.data.filter(auth => {
+          // engData: data.filter(auth => {
             return auth.auth_id === localStorage.getItem('User_id')
         })
       })

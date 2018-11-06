@@ -1,7 +1,7 @@
 import React from 'react'
 
 // const projApi = "http://localhost:5000/projects/"
-const projApi = "https://go-smart-projects.herokuapp.com/projects/"
+const projApi = "https://express-smart-projects.herokuapp.com/projects/"
 
 class UpdateProject extends React.Component {
     constructor(props) {
@@ -15,6 +15,7 @@ class UpdateProject extends React.Component {
             backendHours: this.props.backendHours,
             startDate: this.props.startDate,
             endDate: this.props.endDate,
+            mobileNumber: this.props.mobileNumber
         }
     }
 
@@ -25,6 +26,7 @@ class UpdateProject extends React.Component {
         postBody.revenue = parseInt(this.state.revenue)
         postBody.frontendHours = parseInt(this.state.frontendHours)
         postBody.backendHours = parseInt(this.state.backendHours)
+        postBody.mobileNumber = parseInt(this.state.mobileNumber)
         const body = JSON.stringify(postBody)
 
         const options = {
@@ -51,7 +53,6 @@ class UpdateProject extends React.Component {
     }
 
     render() {
-
         return (
             <div>
                 <form className="sideForm" onSubmit={this.putData}> 
@@ -123,6 +124,11 @@ class UpdateProject extends React.Component {
                                     <option value="4-1-19">4-1-19</option>
                                     <option value="4-15-19">4-15-19</option>
                                 </select>
+                            </label>
+                        </div>
+                        <div className="divSideForm"> 
+                            <label>Mobile Number:<br />
+                                <input placeholder="10 digits" minlength="10" maxlength="10" className="inputAdd" type="number" min="0" step="1" name="mobileNumber" value={this.state.mobileNumber} onChange={this.handleChange} />
                             </label>
                         </div>
                     <button className="addButton" type="submit">Update Project</button>

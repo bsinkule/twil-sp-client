@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../images/logo-smart-projects.png'
+import logo from '../images/white-logo-sp.png'
 
 const RightSide = (props) => {
     return (

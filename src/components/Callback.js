@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import Auth from "../Auth";
-import logo from '../images/long-logo-smart-projects.png'
+import logo from '../images/white-logo-sp.png'
 
 class Callback extends Component {
     componentDidMount(){

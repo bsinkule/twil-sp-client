@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import logo from '../images/long-logo-smart-projects.png'
+import logo from '../images/white-logo-sp.png'
 
 class NotFound extends Component {
     render(){
