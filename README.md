@@ -1,6 +1,6 @@
 ![alt text](./src/images/long-logo-smart-projects.png)
 ---
-### s-p.surge.sh
+### [link to smart projects site](s-p.surge.sh)
 ---
 ### An Efficiency Tool for Software Development Companies that gives them the ability to:
 * Track and forecast developer hours as they relate to your current and incoming projects.
