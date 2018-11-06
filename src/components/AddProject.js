@@ -72,17 +72,17 @@ class AddProject extends React.Component {
                 <form className="sideForm" onSubmit={this.postData}> 
                         <div className="divSideForm">
                             <label>Project Name:<br />
-                                <input autoFocus placeholder="ex. Sandwich Website" className="inputAdd" type="text" name="projectName" value={this.state.projectName} onChange={this.handleChange} required/>
+                                <input autoFocus placeholder="ex. Hotel Web App" className="inputAdd" type="text" name="projectName" value={this.state.projectName} onChange={this.handleChange} required/>
                             </label>
                         </div>
                         <div className="divSideForm">
                             <label>Client:<br />
-                                <input placeholder="ex. Jersey Mike's" className="inputAdd" type="text" name="client" value={this.state.client} onChange={this.handleChange} required/>
+                                <input placeholder="ex. Hilton Suites" className="inputAdd" type="text" name="client" value={this.state.client} onChange={this.handleChange} required/>
                             </label>
                         </div>
                         <div className="divSideForm">
                             <label>Client Logo:<br />
-                                <input placeholder="image url" className="inputAdd" type="text" name="logoClient" value={this.state.logoClient} onChange={this.handleChange} />
+                                <input placeholder="Image URL" className="inputAdd" type="text" name="logoClient" value={this.state.logoClient} onChange={this.handleChange} />
                             </label>
                         </div>
                         <div className="divSideForm">

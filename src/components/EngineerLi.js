@@ -18,7 +18,7 @@ class EngineerLi extends React.Component {
 
     render() {
         return (
-            <li >
+            <li>
                 <img className="resp" src={this.props.imgUrl} alt="Developer"/>
                 <h3>{this.props.name}</h3>
                 <div className="body">

@@ -68,12 +68,12 @@ class AddEngineer extends React.Component {
                 <form className="sideForm" onSubmit={this.postData}> 
                         <div className="divSideForm">
                             <label>Name:<br />
-                                <input placeholder="first and last" className="inputAdd" type="text" name="name" value={this.state.name} onChange={this.handleChange} required/>
+                                <input placeholder="First and Last" className="inputAdd" type="text" name="name" value={this.state.name} onChange={this.handleChange} required/>
                             </label>
                         </div>
                         <div className="divSideForm">
                             <label>Picture:<br />
-                                <input placeholder="image url" className="inputAdd" type="text" name="imgUrl" value={this.state.imgUrl} onChange={this.handleChange} />
+                                <input placeholder="Image URL" className="inputAdd" type="text" name="imgUrl" value={this.state.imgUrl} onChange={this.handleChange} />
                             </label>
                         </div>
                         <div className="divSideForm">
