@@ -8,10 +8,11 @@ const RightSide = (props) => {
                 <li>
                     <img className="rightLogo" src={logo} alt="logo" />
                     <div>
-                        Gives you the power to:<br /><hr />
-                        Track and forecast developer hours as they relate to your current and incoming projects.<br /> <hr />
+                        <hr/>
+                        Track and forecast developer hours as they relate to your current and incoming projects<br /> <hr />
                         Add, adjust and delete project and developer info as needed to ACHIEVE EFFICIENCY!!!<br /><hr />
-                        Track incoming project revenue as it compares to developer cost.<br />
+                        Track incoming project revenue as it compares to developer cost<br /><hr />
+                        Send custom SMS messages to clients to give them project status updates<br/>
                     </div>
                 </li>
             </ul> 
