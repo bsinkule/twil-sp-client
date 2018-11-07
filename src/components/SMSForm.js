@@ -7,7 +7,8 @@ class SMSForm extends Component {
         this.state = {
           message: {
             to: this.props.mobileNumber,
-            body: 'The team at smart projects just deployed a new feature to your site. We are excited for you to check it out! Please contact us with any feedback. Thanks!'
+            // body: 'The team at [YOUR COMPANY NAME] just deployed a new feature to your site. We are excited for you to check it out! Please contact us with any feedback. Thanks!'
+            body: ''
           },
           submitting: false,
           error: false
@@ -37,10 +38,10 @@ class SMSForm extends Component {
               this.setState({
                 error: false,
                 submitting: false,
-                // message: {
-                //   to: '',
-                //   body: ''
-                // }
+                message: {
+                  // to: '',
+                  body: ''
+                }
               });
             } else {
               this.setState({
@@ -64,17 +65,19 @@ class SMSForm extends Component {
                  onChange={this.onHandleChange}
               />
             </div>
-            <div className="hide">
-              <label htmlFor="body">Body:</label>
+            <div className="">
+              <label htmlFor="body">Message:</label><br/>
               <textarea
                     name="body" 
                     id="body"
                     value={this.state.message.body}
                     onChange={this.onHandleChange}
+                    rows="5" cols="30"
+                    placeholder="ex. Refresh your link to check out the new feature we added!"
                 />
             </div>
-            <button className="addButton2" type="submit" disabled={this.state.submitting}>
-                SMS
+            <button className="addButton" type="submit" disabled={this.state.submitting}>
+                Send SMS
             </button>
           </form>
         );
